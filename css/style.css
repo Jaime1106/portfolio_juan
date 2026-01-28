@@ -1,0 +1,273 @@
+/* === ESTILOS GENERALES === */
+
+/* NAVBAR */
+.navbar-brand {
+  letter-spacing: 1px;
+}
+
+/* FOOTER */
+footer {
+  font-size: 0.9rem;
+}
+
+.theme-box {
+  text-decoration: none;
+  color: inherit;
+}
+
+.theme-card {
+  height: 260px;
+  padding: 40px;
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.theme-card h3 {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.theme-card p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.theme-card:hover {
+  background: #111;
+  color: #fff;
+}
+
+.project-post img {
+  border-radius: 2px;
+}
+
+.project-meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.project-post h3 {
+  font-weight: 600;
+}
+
+/* === CORRECCIONES ESPECÍFICAS PARA INDEX.HTML === */
+
+/* 1. CORREGIR LA SECCIÓN ABOUT */
+.about-section {
+  background: #f7f4ee;
+}
+
+/* Elimina el padding que causa espacios */
+.about-section .container-fluid {
+  padding: 0 !important;
+}
+
+/* Ajusta la altura de la fila */
+.about-section .row.min-vh-100 {
+  min-height: 90vh; /* Reduce de 100vh */
+  margin: 0;
+}
+
+/* Ajusta el texto */
+.about-text {
+  padding: 60px 40px;
+}
+
+.about-text h1 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #222;
+  margin-bottom: 1.5rem;
+}
+
+.about-text .lead {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #444;
+  font-weight: 400;
+  max-width: 500px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  max-width: 500px;
+}
+
+/* Corrige la imagen */
+.about-image {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 2. CORREGIR LA SECCIÓN PROFESIONAL - DISEÑO 2X2 */
+.section.bg-light {
+  padding: 60px 0 40px 0; /* Menos padding inferior */
+  margin-bottom: 0; /* Elimina el margen */
+}
+
+/* Contenedor de la cuadrícula 2x2 */
+.professional-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  gap: 40px; /* Espacio entre cuadros */
+}
+
+/* Estilo para cada cuadro/categoría */
+.professional-category {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.professional-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajusta los títulos dentro de los cuadros */
+.professional-category h3 {
+  font-weight: 600;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  color: #222;
+  font-size: 1.3rem;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Ajusta las filas de información dentro de los cuadros */
+.professional-category .info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 0.95rem;
+}
+
+.professional-category .info-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.professional-category .info-row span:first-child {
+  font-weight: 500;
+  color: #333;
+}
+
+.professional-category .info-row span:last-child {
+  color: #666;
+  font-weight: 400;
+}
+
+/* 3. AJUSTES RESPONSIVOS PARA INDEX */
+@media (max-width: 992px) {
+  /* About section en tablet */
+  .about-section .row.min-vh-100 {
+    min-height: auto;
+  }
+  
+  .about-text {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .about-text .lead,
+  .about-text p {
+    margin: 0 auto;
+  }
+  
+  .about-image {
+    height: 400px; /* Altura fija en tablet */
+  }
+  
+  .about-image img {
+    position: relative;
+    height: 100%;
+  }
+  
+  /* Sección profesional en tablet */
+  .section.bg-light {
+    padding: 40px 0 30px 0;
+  }
+  
+  /* En tablet, cambiar a 2 columnas */
+  .professional-grid {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* About section en móvil */
+  .about-text {
+    padding: 30px 15px;
+  }
+  
+  .about-text h1 {
+    font-size: 2rem;
+  }
+  
+  .about-image {
+    height: 300px; /* Altura fija en móvil */
+  }
+  
+  /* Sección profesional en móvil */
+  .section.bg-light {
+    padding: 30px 0 20px 0;
+  }
+  
+  /* En móvil, cambiar a 1 columna */
+  .professional-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .professional-category {
+    padding: 25px 20px;
+  }
+  
+  .professional-category h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .professional-category .info-row {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+}
+
+/* 4. CORREGIR ESPACIOS ENTRE MAIN Y FOOTER */
+main {
+  margin-bottom: 0 !important; /* Elimina margen inferior */
+}
+
+/* Asegura que el footer quede pegado */
+body.d-flex.flex-column.min-vh-100 {
+  min-height: 100vh;
+}
+
+.flex-fill {
+  flex: 1;
+}
